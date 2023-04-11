@@ -27,5 +27,12 @@ if __name__ == '__main__':
        			# If the mouse is clicked
 				if event.button == 1:
 					board.handle_click(mx, my)
+
+		if board.lose_condition('black'):
+			print('White wins!')
+			running = False
+		elif board.lose_condition('white'):
+			print('Black wins!')
+			running = False
 		# Draw the board
 		draw(screen)

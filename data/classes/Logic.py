@@ -3,6 +3,8 @@ ranked_piece = ['5sGen', '4sGen', '3sGen', '2sGen', '1sGen',
               'Sgt']
 
 def attack_check(attacker, defender):
+    if defender == None:
+        return attacker
     #if piece vs flag, attacking piece wins, even if attacker is a flag.
     if defender.notation == 'flag':
         return attacker

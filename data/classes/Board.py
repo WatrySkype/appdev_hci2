@@ -65,7 +65,6 @@ class Board:
                             square.occupying_piece = Flag((x, y), color, self)
                         case _:
                             square.occupying_piece = None
-
     
     def handle_click(self, mx, my):
         x = mx // self.tile_width
@@ -88,6 +87,17 @@ class Board:
                 output.append(
                     Square(x,  y, self.tile_width, self.tile_height)
                 )
+        return output
+    
+    def lose_condition(self, color):
+        output = False
+        flag = None
+        for piece in [i.occupying_piece for i in self.squares]:
+            if piece != None:
+                if piece.notation == 'flag' and piece.color == color:
+                    flag = piece
+        if flag == None:
+            output = True
         return output
     
     def draw(self, display):

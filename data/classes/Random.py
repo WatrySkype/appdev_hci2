@@ -32,5 +32,3 @@ def randomize_board():
     white_side.extend(neutral_side)
     white_side.extend(black_side)
     return white_side
-
-print (randomize_board())

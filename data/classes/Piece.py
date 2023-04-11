@@ -1,4 +1,5 @@
 import pygame
+from data.classes.Logic import attack_check
 
 class Piece:
     def __init__(self, pos, color, board):
@@ -24,9 +25,9 @@ class Piece:
                 new_pos[1] < 8 and 
                 new_pos[1] >= 0
             ):
-                output.append([
+                output.append(
                     board.get_square_from_pos(new_pos)
-                ])
+                )
         return output
         
     def move(self, board, square, force=False):
@@ -34,9 +35,11 @@ class Piece:
             i.highlight = False
         if square in self.get_valid_moves(board) or force:
             prev_square = board.get_square_from_pos(self.pos)
-            self.pos, self.x, self.y = square.pos, square.x, square.y
+            winner = attack_check(prev_square.occupying_piece, square.occupying_piece)
+            if winner == self:
+                self.pos, self.x, self.y = square.pos, square.x, square.y
+                square.occupying_piece = self
             prev_square.occupying_piece = None
-            square.occupying_piece = self
             board.selected_piece = None
             self.has_moved = True
             return True
