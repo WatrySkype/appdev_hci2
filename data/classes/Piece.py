@@ -54,3 +54,11 @@ class Piece:
 
     def attacking_squares(self, board):
         return self.get_moves(board)
+    
+    def default_img(self):
+        pass
+
+    def hide_img(self, board):
+        img_path = 'data/img/' + self.color[0] + '.png'
+        self.img = pygame.image.load(img_path)
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))

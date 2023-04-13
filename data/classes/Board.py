@@ -106,5 +106,16 @@ class Board:
             for square in self.selected_piece.get_valid_moves(self):
                 square.highlight = True
         for square in self.squares:
+            if square.occupying_piece != None:
+                if self.turn == 'white':
+                    if square.occupying_piece.color == 'white':
+                        square.occupying_piece.default_img(self)
+                    elif square.occupying_piece.color == 'black':
+                        square.occupying_piece.hide_img(self)
+                else:
+                    if square.occupying_piece.color == 'white':
+                        square.occupying_piece.hide_img(self)
+                    elif square.occupying_piece.color == 'black':
+                        square.occupying_piece.default_img(self)
             square.draw(display)
     
