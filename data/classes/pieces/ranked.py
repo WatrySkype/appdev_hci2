@@ -6,7 +6,7 @@ class Sergeant(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_sgt.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = 'Sgt'
 
 class SecondLt(Piece):
@@ -14,7 +14,7 @@ class SecondLt(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_2lt.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = '2Lt'
 
 class FirstLt(Piece):
@@ -22,7 +22,7 @@ class FirstLt(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_1lt.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = '1Lt'
 
 class Captain(Piece):
@@ -30,7 +30,7 @@ class Captain(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_cap.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = 'Cap'
 
 class Major(Piece):
@@ -38,7 +38,7 @@ class Major(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_maj.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = 'Maj'
 
 class LtColonel(Piece):
@@ -46,7 +46,7 @@ class LtColonel(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_ltcol.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = 'LtCol'
 
 class Colonel(Piece):
@@ -54,7 +54,7 @@ class Colonel(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_col.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = 'Col'
 
 class General1(Piece):
@@ -62,7 +62,7 @@ class General1(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_1sgen.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = '1sGen'
 
 class General2(Piece):
@@ -70,7 +70,7 @@ class General2(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_2sgen.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = '2sGen'
 
 class General3(Piece):
@@ -78,7 +78,7 @@ class General3(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_3sgen.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = '3sGen'
 
 class General4(Piece):
@@ -86,7 +86,7 @@ class General4(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_4sgen.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = '4sGen'
 
 class General5(Piece):
@@ -94,5 +94,5 @@ class General5(Piece):
         super().__init__(pos, color, board)
         img_path = 'data/img/' + color[0] + '_5sgen.svg'
         self.img = pygame.image.load(img_path)
-        self.img = pygame.transform.scale(self.img, (board.tile_width-20, board.tile_height-20))
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
         self.notation = '5sGen'
