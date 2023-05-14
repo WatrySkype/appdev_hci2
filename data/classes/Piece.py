@@ -36,10 +36,15 @@ class Piece:
             i.highlight = False
         if square in self.get_valid_moves(board) or force:
             prev_square = board.get_square_from_pos(self.pos)
+            if square.occupying_piece != None:
+                if square.occupying_piece.color == prev_square.occupying_piece.color:
+                    return False
             winner = attack_check(prev_square.occupying_piece, square.occupying_piece)
             if winner == self:
                 self.pos, self.x, self.y = square.pos, square.x, square.y
                 square.occupying_piece = self
+            if winner == None:
+                square.occupying_piece = None
             prev_square.occupying_piece = None
             board.selected_piece = None
             self.has_moved = True
@@ -50,3 +55,11 @@ class Piece:
 
     def attacking_squares(self, board):
         return self.get_moves(board)
+    
+    def default_img(self):
+        pass
+
+    def hide_img(self, board):
+        img_path = 'data/img/' + self.color[0] + '.png'
+        self.img = pygame.image.load(img_path)
+        self.img = pygame.transform.scale(self.img, (board.tile_width, board.tile_height-20))
