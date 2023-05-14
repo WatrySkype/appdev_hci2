@@ -8,6 +8,7 @@ class Piece:
         self.y = pos[1]
         self.color = color
         self.has_moved = False
+        self.opponent_guess = list(range(15))
 
     def get_valid_moves(self, board):
         output = []
